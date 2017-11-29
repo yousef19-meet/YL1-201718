@@ -17,34 +17,26 @@
 ##
 ##class Hexagon(Turtle):
 ##    def __init__(self
-import turtle
-s=turtle.Screen()
-p=turtle.Turtle()
 
-def happymouth(p,x,y):
-    p.setheading(-60)
-    jump(p,x-60.62,y+65)
-    p.circle(70,120)
+from turtle import *
 
-def eyes(p,x,y):
-    jump(p,x+35,y+120)
-    p.dot(25)
-    jump(p,x-35,y+120)
-    p.dot(25)
+class Hexagon (Turtle):
+    def __init__(self,size,speed,color):
+        Turtle.__init__(self)
+        self.speed(speed)
+        self.color(color)
+        self.shapesize(size)
+        self.begin_poly()
+        for i in range(6):
+            self.pu()
+            self.rt(60)
+            self.fd(100)
+        self.end_poly()
+        p =self.get_poly()
+        register_shape("hexagon",p)
+        self.shape("hexagon")
+H1= Hexagon(1,10,"red")
+H1.fd(200)
 
-def jump(p,x,y):
-    p.up()
-    p.goto(x,y)
-    p.down()
 
 
-def emoticon(p,x,y):
-    p=turtle.Turtle()
-    s=turtle.Screen()
-    p.pensize(3)
-    p.setheading(0)
-    jump(p,x,y)
-    p.circle(100)
-    eyes(p,x,y)
-    happymouth(p,x,y)
-    jump(p,x,y)
