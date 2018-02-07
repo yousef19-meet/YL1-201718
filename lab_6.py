@@ -12,7 +12,7 @@ class Ball(Turtle):
 
 ball_1= Ball (50,"blue",1)
 ball_1.pu()
-ball_1.fd(200)
+ball_1.fd(70)
 ball_2= Ball (20,"red",2)
 ball_2.pu()
 
